@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    font-family: "JetBrains Mono", monospace;
+}
+:root{
+    --bgColor:#1c1c22;
+    --secondBgColor:#323946;
+    --txtColor:white;
+    --defaultColor:#00ff99;
+    --hoverColor:#00e187;
+}
+html{
+    font-size: 62.5%;
+}
+section{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.gameBox{
+    width: 52%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid orange;
+    background-color: var(--bgColor);
+}
+.gameContent{
+    height: 100%;
+    width: 95%;
+    position: relative;
+    background-color: var(--bgColor);
+}
+.jet{
+    position: absolute;
+    color:var(--defaultColor);
+    z-index: 3;
+    font-size: 4em;
+    bottom: .1em;
+    left: calc((100% / 72) * (-1));
+}
+.fire{
+    position: absolute;
+    background-color: white;
+    height: 1em;
+    width: 0.5em;
+    bottom: 3em;
+    z-index: 0;
+    animation: BtT 2s linear 1 forwards;
+}
+@keyframes BtT{
+    0%{
+        bottom: 4em;
+    }
+    100%{
+        bottom: 100vh;
+    }
+}
+
+.attack{
+    position: absolute;
+    background-color: red;
+    height: 1em;
+    width: 2em;
+    bottom: 101vh;
+    z-index: 0;
+    animation: TtB 4s linear 1 forwards;
+}
+@keyframes TtB{
+    0%{
+        bottom: 101vh;
+    }
+    100%{
+        bottom: -3em;
+    }
+}
+
+.lifeAndScore{
+    width: 20em;
+    height: 10em;
+    position:fixed;
+    right: 5em;
+    top:2em;
+    z-index: 1;
+    background-color: var(--defaultColor);
+    border-radius: 1em;
+
+}
+.lifeAndScore h1, .lifeAndScore h2{
+    color: var(--bgColor);
+    text-align: center;
+    margin-top: 1em;
+}
+.gameOver{
+    position: fixed;
+    z-index: 3;
+    width: 60em;
+    height: 40em;
+    background-color: var(--secondBgColor);
+    border-radius: 1em;
+    box-shadow: 1em 1em 3em rgba(253, 249, 249, 0.1);
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding-top: 4.5em;
+    display: none;
+}
+.gameOver h1, .gameOver h2{
+    color: var(--txtColor);
+    text-align: center;
+}
+.gameOver h1{
+    font-size: 8em;
+    margin-bottom: 0.2em;
+    color: rgb(34, 150, 4);
+}
+.gameOver h2{
+    font-size: 4em;
+    margin-bottom: 0.3em;
+
+}
+.gameOver a{
+    display: inline-block;
+    text-decoration: none;
+    background-color: var(--defaultColor);
+    color: var(--txtColor);
+    font-size: 2.3em;
+    padding: 0.4em;
+    border-radius: 0.3em;
+    margin-top: 0.8em;
+    margin-left: 50%;
+    transform: translate(-50%);
+}
