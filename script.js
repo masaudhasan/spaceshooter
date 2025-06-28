@@ -80,7 +80,7 @@ function attacking (){
     gameContent.appendChild(tm);
 
 }
-const attackingInterval=setInterval(attacking, 1000);
+const attackingInterval=setInterval(attacking, 700);
 document.addEventListener('keydown', (e)=>{
     let key=e.key;
     if(key === "ArrowRight" && count<49){
