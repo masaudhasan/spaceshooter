@@ -12,6 +12,9 @@ let fire= new Map();
 let th=0;
 let ans=0;
 
+let leftBtn=document.querySelector(".left");
+let rightBtn=document.querySelector('.right');
+
 score.innerText=`Your Score:  ${ans}`;
 life.innerText=`Life:  ${lifeCount}`;
 
@@ -85,6 +88,22 @@ document.addEventListener('keydown', (e)=>{
         jet.style.transform=`translateX(calc(${count * width}px))`;      
     }
 });
+let rightActive;
+let mobileRight;
+rightBtn.addEventListener("touchstart", ()=>{
+    mobileRight=()=>{
+        if(count<49){
+            count++;
+            jet.style.transform=`translateX(calc(${count * width}px))`;      
+        }
+    };
+    mobileRight();
+    rightActive=setInterval(mobileRight,40);
+});
+rightBtn.addEventListener("touchend", ()=>{
+    clearInterval(rightActive);
+});
+
 document.addEventListener('keydown', (e)=>{
     let key=e.key;
     if(key === "ArrowLeft" && count>0){
@@ -92,7 +111,21 @@ document.addEventListener('keydown', (e)=>{
         jet.style.transform=`translateX(calc(${count * width}px))`;
     }
 });
-
+let mobileLeft;
+let leftActive;
+leftBtn.addEventListener("touchstart", ()=>{
+    mobileLeft=()=>{
+        if(count>0){
+            count--;
+            jet.style.transform=`translateX(calc(${count * width}px))`;
+        }
+    };
+    mobileLeft();
+   leftActive=setInterval(mobileLeft,40);
+});
+leftBtn.addEventListener("touchend", ()=>{
+    clearInterval(leftActive);
+});
 
 // while(1){
     

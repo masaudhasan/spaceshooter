@@ -90,7 +90,7 @@ section{
     height: 10em;
     position:fixed;
     right: 5em;
-    top:2em;
+    top:2.5em;
     z-index: 1;
     background-color: var(--defaultColor);
     border-radius: 1em;
@@ -140,4 +140,105 @@ section{
     margin-top: 0.8em;
     margin-left: 50%;
     transform: translate(-50%);
+}
+.btn{
+    display: none;
+}
+@media screen and (min-width:2560px){
+    .jet{
+        font-size: 5.5em;
+    }
+    .fire{
+        height: 1.5em;
+        width: 0.8em;
+    }
+    .attack{
+        height: 1.5em;
+        width: 3.2em;
+    }
+}
+@media screen and (max-width:768px) {
+    .jet{
+        font-size: 2.95em;
+    }
+    .fire{
+        height: 0.7em;
+        width: 0.4em;
+    }
+    .attack{
+        height: 0.7em;
+        width: 1.5em;
+    }
+    .lifeAndScore{
+        right: 3px;
+        top:2em;
+        width: 18em;
+    }
+    .gameBox{
+        width: 70%;
+    }
+    .btn{
+        display: inline-block;
+        position: absolute;
+    }
+    .btn i{
+        font-size: 3.5em;
+        color: var(--defaultColor);
+    }
+    .left{
+        left: 3em;
+    }
+    .right{
+        right: 3em;
+    }
+    
+}
+
+@media screen and (max-width:425px){
+    .gameBox{
+        width: 90%;
+    }
+    .gameOver{
+        width: 100%;
+    }
+    .gameOver h1{
+        font-size: 5em;
+    }
+    .gameOver h2{
+        font-size: 3em;
+    }
+    .lifeAndScore{
+        right: 3px;
+        top:2em;
+        width: 15em;
+        height: 8em;
+    }
+    .jet{
+        font-size: 2.7em;
+    }
+    .fire{
+        height: 0.6em;
+        width: 0.3em;
+    }
+    .attack{
+        height: 0.6em;
+        width: 1.1em;
+    }
+    .btn i{
+        font-size: 3.2em;
+    }
+    .left{
+        left: 0.2em;
+    }
+    .right{
+        right: 0.2em;
+    }
+    .lifeAndScore h1, .lifeAndScore h2{
+        margin-top: 0.7em;
+    }
+    .lifeAndScore h1{
+        font-size: 1.5em;
+        margin-top: 1em;
+    }
+
 }
